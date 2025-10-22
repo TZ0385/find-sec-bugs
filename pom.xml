@@ -22,7 +22,7 @@
             <!-- Force the use the compatibility to Java 8 -->
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>2.3.2</version>
+                <version>3.14.0</version>
                 <!-- Be careful before updating this plugin..
                     The current deployment process will fail.
                     (https://github.com/find-sec-bugs/find-sec-bugs/wiki/Compiling#release-process) -->
@@ -36,7 +36,7 @@
             <plugin>
                 <groupId>com.mycila</groupId>
                 <artifactId>license-maven-plugin</artifactId>
-                <version>2.11</version>
+                <version>4.3</version>
                 <configuration>
                     <header>file:///${session.executionRootDirectory}/LGPL-3.0-header.txt</header>
                     <aggregate>true</aggregate>
@@ -107,9 +107,9 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
-                <version>2.10.4</version>
+                <version>3.12.0</version>
                 <configuration>
-                    <additionalparam>-Xdoclint:none</additionalparam>
+                    <doclint>none</doclint>
                     <source>8</source>
                 </configuration>
             </plugin>
@@ -153,7 +153,7 @@
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-gpg-plugin</artifactId>
-                        <version>1.6</version>
+                        <version>3.2.3</version>
                         <executions>
                             <execution>
                                 <id>sign-artifacts</id>
@@ -179,7 +179,7 @@
                     <plugin>
                         <groupId>org.jacoco</groupId>
                         <artifactId>jacoco-maven-plugin</artifactId>
-                        <version>0.8.2</version>
+                        <version>0.8.9</version>
                         <executions>
                             <execution>
                                 <goals>
@@ -201,7 +201,7 @@
                     <plugin>
                         <groupId>com.github.spotbugs</groupId>
                         <artifactId>spotbugs-maven-plugin</artifactId>
-                        <version>4.8.6.6</version>
+                        <version>4.8.6.7</version>
                         <configuration>
                             <xmlOutput>true</xmlOutput>
                             <failOnError>false</failOnError>

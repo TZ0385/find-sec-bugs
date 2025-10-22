@@ -12,7 +12,7 @@
     <name>Find Security Bugs Samples Kotlin</name>
 
     <properties>
-        <kotlin.version>1.7.20</kotlin.version>
+        <kotlin.version>1.8.20</kotlin.version>
         <spotbugs.skip>true</spotbugs.skip>
     </properties>
 
@@ -70,7 +70,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
-                <version>2.2</version>
+                <version>3.4.2</version>
                 <executions>
                     <execution>
                         <goals>
