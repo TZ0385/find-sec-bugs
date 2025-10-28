@@ -27,7 +27,6 @@ import edu.umd.cs.findbugs.classfile.CheckedAnalysisException;
 import edu.umd.cs.findbugs.classfile.IAnalysisCache;
 import edu.umd.cs.findbugs.classfile.IMethodAnalysisEngine;
 import edu.umd.cs.findbugs.classfile.MethodDescriptor;
-import edu.umd.cs.findbugs.io.IO;
 
 import java.io.BufferedWriter;
 import java.io.File;
@@ -148,14 +147,10 @@ public class TaintDataflowEngine implements IMethodAnalysisEngine<TaintDataflow>
     }
     
     private void addCustomConfig(String path) {
-        InputStream stream = null;
-        try {
-            File file = new File(path);
-            if (file.exists()) {
-                stream = new FileInputStream(file);
-            } else {
-                stream = getClass().getClassLoader().getResourceAsStream(path);
-            }
+        File file = new File(path);
+        try (InputStream stream = file.exists()
+                ? new FileInputStream(file)
+                : getClass().getClassLoader().getResourceAsStream(path)) {
             if (stream == null) {
                 String message = String.format("Could not add custom config. "
                         + "Neither file %s nor resource matching %s found.",
@@ -166,8 +161,6 @@ public class TaintDataflowEngine implements IMethodAnalysisEngine<TaintDataflow>
             LOGGER.log(Level.INFO, "Custom taint config loaded from {0}", path);
         } catch (IOException ex) {
             throw new RuntimeException("Cannot load custom taint config from " + path, ex);
-        } finally {
-            IO.close(stream);
         }
     }
     

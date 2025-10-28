@@ -30,7 +30,6 @@ import edu.umd.cs.findbugs.ba.generic.GenericSignatureParser;
 import edu.umd.cs.findbugs.classfile.MethodDescriptor;
 import edu.umd.cs.findbugs.classfile.analysis.AnnotationValue;
 import edu.umd.cs.findbugs.classfile.analysis.MethodInfo;
-import edu.umd.cs.findbugs.io.IO;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;

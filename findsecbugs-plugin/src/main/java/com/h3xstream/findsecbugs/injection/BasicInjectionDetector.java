@@ -24,7 +24,6 @@ import com.h3xstream.findsecbugs.taintanalysis.TaintDataflowEngine;
 import com.h3xstream.findsecbugs.taintanalysis.TaintFrameAdditionalVisitor;
 import edu.umd.cs.findbugs.BugReporter;
 import edu.umd.cs.findbugs.ba.AnalysisContext;
-import edu.umd.cs.findbugs.io.IO;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -36,7 +35,6 @@ import java.util.Set;
 import java.util.regex.Pattern;
 import org.apache.bcel.Repository;
 import org.apache.bcel.classfile.JavaClass;
-import org.apache.bcel.classfile.Signature;
 import org.apache.bcel.generic.ConstantPoolGen;
 import org.apache.bcel.generic.InstructionHandle;
 import org.apache.bcel.generic.InvokeInstruction;
