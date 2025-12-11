@@ -36,10 +36,6 @@ public class PathTraversal {
         File.createTempFile(input, "safe");
         File.createTempFile("safe", input);
         File.createTempFile("safe", input, new File("safeDir"));
-
-        Paths.get("safe", input);
-        Paths.get(input);
-
         new File(safefinalString);
     }
 }

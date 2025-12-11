@@ -2,6 +2,7 @@ package testcode.pathtraversal;
 
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.nio.file.Path;
 import java.nio.file.Paths;
 
 public class NioPathTraversal {
@@ -22,5 +23,19 @@ public class NioPathTraversal {
         Paths.get(new URI("file", "foo", null));
         Paths.get(new URI("file", "foo", "bar"));
 
+        Path.of(path);
+        Path.of(path,"foo");
+        Path.of(path,"foo", "bar");
+        Path.of("foo", path);
+        Path.of("foo", "bar", path);
+
+        Path.of(new URI("file", path, null));
+        Path.of(new URI("file", path, "foo"));
+
+        Path.of("foo");
+        Path.of("foo","bar");
+        Path.of("foo","bar", "allsafe");
+        Path.of(new URI("file", "foo", null));
+        Path.of(new URI("file", "foo", "bar"));
     }
 }
