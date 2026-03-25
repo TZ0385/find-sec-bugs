@@ -19,7 +19,6 @@ package com.h3xstream.findsecbugs.file;
 
 import com.h3xstream.findbugs.test.BaseDetectorTest;
 import com.h3xstream.findbugs.test.EasyBugReporter;
-import com.h3xstream.findsecbugs.FindSecBugsGlobalConfig;
 import org.testng.annotations.Test;
 
 import java.util.Arrays;
@@ -43,7 +42,7 @@ public class NioPathTraversalTest extends BaseDetectorTest {
         EasyBugReporter reporter = spy(new SecurityReporter());
         analyze(files, reporter);
 
-        for (Integer line : Arrays.asList(10,11,12,13,14,16,17)) {
+        for (Integer line : Arrays.asList(11, 12, 13, 14, 15, 17, 18, 26, 27, 28, 29, 30, 32, 33)) {
             verify(reporter).doReportBug(
                     bugDefinition()
                             .bugType("PATH_TRAVERSAL_IN")
@@ -52,6 +51,6 @@ public class NioPathTraversalTest extends BaseDetectorTest {
             );
         }
 
-        verify(reporter, times(7)).doReportBug(bugDefinition().bugType("PATH_TRAVERSAL_IN").build());
+        verify(reporter, times(14)).doReportBug(bugDefinition().bugType("PATH_TRAVERSAL_IN").build());
     }
 }
